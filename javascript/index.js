@@ -88,4 +88,4 @@ if (!is_password_invalid) {
 if (user.tel == undefined || user.tel == null) {
     user.tel = 1234;
 } // else if ()  Nel mezzo posso mettere quanti else if voglio. Posso anche utilizzare lo switch
-console.log(user);s
+console.log(user);
