@@ -13,3 +13,10 @@ let number = 37;
     console.log(number);
 }
 console.log(number);
+
+let outside = 2;
+{
+    let inside = 8;
+    console.log(outside, inside);
+}
+console.log(outside, inside);
