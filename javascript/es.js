@@ -40,3 +40,7 @@ while (numero >= 1) { // Continua finché numero è maggiore o uguale a 1
     console.log(numero); // Stampa il numero corrente
     numero -= 2; // Decrementa numero di 2 per passare al successivo numero dispari
 }
+
+// Es prompt
+let word = prompt('Come ti chiami?'); // Interagisce con l'utente
+console.log(word);
