@@ -151,3 +151,54 @@ console.log(result2); //creo un contatore result2 che fa la somma tra result2 e 
 // num = numArr[5] → num = 6
 // result2 += num → result2 = 15 + 6 → result2 diventa 21
 // Al termine del ciclo, result2 contiene la somma di tutti gli elementi di numArr, ossia 21.
+
+// Stesso codice di come sopra pero con i numeri pari
+const numArr1 = [1, 2, 3, 4, 5, 6];
+let result3 = 0;
+
+for(let i = 0; i < numArr1.length; i++) {
+    const num = numArr1[i];
+    if (num % 2 === 0) {
+        result3 += num;
+    }
+}
+console.log(result3); //qui chiedo di fare la somma di tutti i numeri pari con la condizione if
+// (num % 2 === 0) L'operatore % (modulo) restituisce il resto della divisione di num per 2.
+// Se num % 2 è uguale a 0, significa che num è pari (non lascia resto nella divisione per 2), 
+// quindi la condizione if è vera solo per i numeri pari.
+
+// Per farlo dispari verificheremo se num % 2 !== 0, ovvero se num non è divisibile per 2 senza resto.
+
+//FUNZIONI
+function hello(gabbiano) {
+    console.log('Hello ' + gabbiano)
+}
+hello('Steve')
+hello('Meth')
+hello('Strunz')
+hello('Chiara')
+
+const peso = 60;
+function pesotot() {
+    console.log('Chiara pesa ' + peso)
+}
+pesotot()
+
+//return
+function hello2(name4) {
+    return 'Hello ' + name4
+}
+const value = hello2('Luca');
+const frase6 = value + ' come stai?';
+console.log(frase6); //anche console.log(hello('Luca'));
+
+function generalità(a, b) {
+    const obj = {
+        name: a,
+        age: b
+    }
+    return obj
+}
+const value1 = generalità('Luca', 54);
+const frase1 = 'Hello ' + value1.name + ' oggi compi ' + value1.age + ' anni';
+console.log(frase1);
