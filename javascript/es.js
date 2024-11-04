@@ -24,3 +24,19 @@ let outside = 2;
 for(i = 0; i <= 20; i +=2) {
     console.log(i);
 }
+
+let totale = 0;
+for( let riga = 0; riga < 10; riga++) {
+    if(riga % 2 == 0) {
+        totale = totale + riga;
+    }
+}
+console.log(totale);
+
+//es while
+let numero = 9; // Iniziamo da 9, il primo numero dispari sotto 10
+
+while (numero >= 1) { // Continua finché numero è maggiore o uguale a 1
+    console.log(numero); // Stampa il numero corrente
+    numero -= 2; // Decrementa numero di 2 per passare al successivo numero dispari
+}
