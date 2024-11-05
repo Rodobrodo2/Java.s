@@ -44,3 +44,4 @@ while (numero >= 1) { // Continua finché numero è maggiore o uguale a 1
 // Es prompt
 let word = prompt('Come ti chiami?'); // Interagisce con l'utente
 console.log(word);
+console.log(word.length);
