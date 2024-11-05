@@ -22,3 +22,7 @@ if (isNaN(score)) {
       console.log("Voto insufficiente");
   }
 }
+
+
+let arr = [1, 2, 3, 4, 5];
+console.log(arr);
