@@ -33,7 +33,7 @@ for (let i = 0; i < arr.length; i++) {
 }
 console.log("RISULTATO", result);
 
-
+// Array inverso
 
 let arr2 = [1, 2, 3, 4, 5];
 for (let i = 0; i < arr2.length / 2; i++) { // arr2.length / 2 perche dobbiamo invertiresolo l 1 e il 2 con il 5 e 4, quindi fino a meta.
@@ -45,3 +45,21 @@ for (let i = 0; i < arr2.length / 2; i++) { // arr2.length / 2 perche dobbiamo i
 }
 
 console.log("Array invertito:", arr2);
+
+//Popolamento array
+
+let parole = [];
+
+
+for (let i = 0; i < 5; i++) {
+    let parola = prompt("Inserisci una parola:");
+    parole.push(parola);
+}
+
+for (let i = 0; i < parole.length; i++) {
+    let parola = parole[i];
+    if (parola.length % 2 !== 0) { 
+        console.log(parola);
+    }
+}
+
