@@ -32,3 +32,16 @@ for (let i = 0; i < arr.length; i++) {
     result += num;
 }
 console.log("RISULTATO", result);
+
+
+
+let arr2 = [1, 2, 3, 4, 5];
+for (let i = 0; i < arr2.length / 2; i++) { // arr2.length / 2 perche dobbiamo invertiresolo l 1 e il 2 con il 5 e 4, quindi fino a meta.
+  let opposto = arr2.length - 1 - i; // la variabile opposto serve per scambiare l indice 0 con lindice 4
+  
+  let temp = arr2[i]; //la variabile temp ci permette di scambiare l indice 0 con l indice 4 e l indice 1 con l indice 3.
+  arr2[i] = arr2[opposto];
+  arr2[opposto] = temp;
+}
+
+console.log("Array invertito:", arr2);
