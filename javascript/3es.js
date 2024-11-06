@@ -63,3 +63,12 @@ for (let i = 0; i < parole.length; i++) {
     }
 }
 
+// Crea oggetto 
+
+let person = {
+  name: "Mario",
+  age: 30,
+  city: "Roma"
+};
+
+console.log(person);
