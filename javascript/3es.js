@@ -76,3 +76,7 @@ person.job = "Macellaio";
 console.log(person);
 console.log(person.age);
 console.log(person.job);
+
+for(generalita in person) {
+  console.log(generalita + ": " + person[generalita]);
+}
