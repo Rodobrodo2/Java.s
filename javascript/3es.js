@@ -72,3 +72,4 @@ let person = {
 };
 
 console.log(person);
+console.log(person.age);
