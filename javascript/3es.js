@@ -70,6 +70,7 @@ let person = {
   age: 30,
   city: "Roma"
 };
+person.age = 44;
 
 console.log(person);
 console.log(person.age);
