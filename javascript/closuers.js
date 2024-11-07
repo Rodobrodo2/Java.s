@@ -49,7 +49,7 @@ console.log(counter.getCount());
 
 // OBject.keys
 
-student = {
+const student = {
     name: "Redi",
     age: 25,
     grade: "C",
