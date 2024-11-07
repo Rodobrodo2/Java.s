@@ -234,3 +234,58 @@ const newInner = outerFunction(10);
  }
 
  outerFunction1(numarr5)(6);
+ /* Questo codice in JavaScript utilizza una closure per filtrare e stampare tutti gli elementi in un array numarr5 che sono maggiori di un numero specificato.
+ Scopo di innerFunction1: La funzione innerFunction1 esegue un ciclo for su ogni elemento dell’array arr5. Per ciascun elemento, verifica se è maggiore di num. Se la condizione è soddisfatta (element > num),
+ l’elemento viene stampato sulla console con */
+
+ const lista = [1,2,3,4,5,6];
+ lista.push(10); // aggiunge nuovi elementi alla fine dell'array.
+ lista.pop(); // rimuove l'ultimo elemento dell' array se le tonde sono vuote, il 10 in questo caso.
+ lista.unshift(10); // mette l'elemento all'inizio dell' array.
+ console.log(lista);
+
+ const listaArr = [1,2,3,4,5,6];
+ const sliced = listaArr.slice(2, 5); /* Restituisce una copia di una sezione di un array. Sia per l’indice di inizio (start) sia per quello di fine (end), è possibile utilizzare un indice negativo per indicare una posizione partendo dalla fine dell’array.
+  Ad esempio, -2 si riferisce al penultimo elemento dell’array. */
+ console.log(sliced);
+
+ //splice
+ const arr88 = [1,2,3,4,5,6];
+ const arr89 = arr88.splice(2, 5);
+ console.log(arr89); // splice cancella gli indici che gli diamo e ci fa tornare gli elementi che abbiamo cancellato, li separa/ divide
+ console.log(arr88); // infatti qui vedremo solo l elemento 1 e 2.
+
+ // con splice possiamo aggiungere un elemnto nella posizione dove vogliamo nell'array
+const arr90 = [1,2,3,4,5,6];
+const arr91 = arr90.splice(2,0,20); // aggiungo l'elemento 20 prima dell indice 2
+console.log(arr90);
+
+//filtered method
+/*.filter() in JavaScript, che permette di creare un nuovo array contenente solo gli elementi che passano una determinata condizione definita nella funzione di callback.
+ La funzione di callback restituisce true per gli elementi che devono essere inclusi e false per quelli che devono essere esclusi. */
+
+const numbers99 = [1,2,3,4,5,6,7,8];
+const filtered = numbers99.filter((number) => {  //Restituisce gli elementi di un array che soddisfano la condizione specificata in una funzione di callback
+    return number > 4
+})
+
+console.log(filtered);
+
+/* potevo scriverlo anche cosi:
+const filtered = numbers99.filter((number) => number > 4) */
+
+//metodo map
+/* Il metodo .map() in JavaScript è un metodo di array che crea un nuovo array popolato con i risultati dell’applicazione di una funzione su ogni elemento dell’array originale. 
+È spesso utilizzato quando si desidera trasformare un array applicando una funzione a ciascun elemento, 
+senza modificare l’array originale. */
+
+const numbers12 = [1,2,3,4,5,6,7,8];
+const mapped = numbers12.map((number) => { //map(value: number, index: number, array: number[])
+    if (number % 2 === 0) {
+        return number * 2
+    } else {
+        return number
+    }
+})
+
+console.log(mapped);
