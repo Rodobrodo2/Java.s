@@ -47,7 +47,7 @@ console.log(counter.increment());
 console.log(counter.decrement()); 
 console.log(counter.getCount());  
 
-// OBject.keys
+// Object.keys Object.values Object.entries
 
 const student = {
     name: "Redi",
