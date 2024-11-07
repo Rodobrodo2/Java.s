@@ -62,3 +62,13 @@ const valori = Object.values(student); //Object.values metodo per " i valori.
 console.log(valori);
 const entrate = Object.entries(student); //Object.entries metodo per chiave:valore.
 console.log(entrate);
+
+const numbers = [1,2,3,4,5];
+numbers.forEach(number => {
+    console.log(number * 2);
+});
+
+const squaredNumbers = numbers.map(function(number) {
+    return number * number;
+});
+console.log(squaredNumbers);
