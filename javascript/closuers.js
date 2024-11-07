@@ -22,3 +22,27 @@ console.log(value(80)); // 80 u sopra 6 e il valore del parametro y o della funz
 //(initalvalue)10 + 6(y)= 16 (result)
 // (initalvalue e il result salvato in precedenza):
 // 16 + 80(y) = 96.
+
+//Counter
+
+function createCounter() {
+    let count = 0;
+    return {
+        increment: function() {
+            count++;
+            return count;
+        },
+        decrement: function() {
+            count--;
+            return count;
+        },
+        getCount: function() {
+            return count;
+        }
+    };
+}
+const counter = createCounter();
+
+console.log(counter.increment());  
+console.log(counter.decrement()); 
+console.log(counter.getCount());  
