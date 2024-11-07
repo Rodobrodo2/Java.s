@@ -95,3 +95,19 @@ const failedStudent = students.find(function(student) {
 
 console.log("Passed Students:", passedStudents);
 console.log("Failed Student:", failedStudent);
+
+//reduce & sort
+
+// reduce
+
+const expenses = [150, 75, 200, 50, 125];
+const totalExpenses = expenses.reduce(function(total, expense) {
+    return total + expense;
+}, 0);
+// lo 0 e il valore iniziale di total, quindi a ogni iterazione sara 0 + 150(expense) = 150, 150 + 75 = 225 ecc. 
+console.log("Somma totale delle spese:", totalExpenses);
+
+// sort
+const words = ["banana", "apple", "cherry", "date"];
+const sortedWords = words.sort();
+console.log("Array ordinato delle parole:", sortedWords);
