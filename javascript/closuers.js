@@ -63,6 +63,8 @@ console.log(valori);
 const entrate = Object.entries(student); //Object.entries metodo per chiave:valore.
 console.log(entrate);
 
+//forEach &map
+
 const numbers = [1,2,3,4,5];
 numbers.forEach(number => {
     console.log(number * 2);
@@ -72,3 +74,24 @@ const squaredNumbers = numbers.map(function(number) {
     return number * number;
 });
 console.log(squaredNumbers);
+
+//filter e find
+
+const students = [
+    { name: 'Angelo', grade: 75 },
+    { name: 'Anita', grade: 45 },
+    { name: 'Agata', grade: 85 },
+    { name: 'Aurelio', grade: 55 },
+    { name: 'Amerigo-', grade: 65 }
+];
+
+const passedStudents = students.filter(function(student) {
+    return student.grade >= 60;
+});
+
+const failedStudent = students.find(function(student) {
+    return student.grade < 60; //find cerchera il primo elemento che soddisfa la funzione o il callback, se volessimo trovare tutti gli studenti che hanno voto < 60 dobbiamo usare filter, il quale crea un nuovo array e include tutti gli elementi che rispettano la condizione.
+});
+
+console.log("Passed Students:", passedStudents);
+console.log("Failed Student:", failedStudent);
