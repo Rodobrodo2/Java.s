@@ -46,3 +46,19 @@ const counter = createCounter();
 console.log(counter.increment());  
 console.log(counter.decrement()); 
 console.log(counter.getCount());  
+
+// OBject.keys
+
+student = {
+    name: "Redi",
+    age: 25,
+    grade: "C",
+    school: "Mia Accademy",
+}
+
+const chiavi = Object.keys(student); //Object.keys metodo per estrapolare le chiavi in un oggetto 
+console.log(chiavi);
+const valori = Object.values(student); //Object.values metodo per " i valori.
+console.log(valori);
+const entrate = Object.entries(student); //Object.entries metodo per chiave:valore.
+console.log(entrate);
