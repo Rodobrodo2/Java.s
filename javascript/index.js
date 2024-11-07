@@ -162,10 +162,10 @@ for(let i = 0; i < numArr1.length; i++) {
         result3 += num;
     }
 }
-console.log(result3); //qui chiedo di fare la somma di tutti i numeri pari con la condizione if
-// (num % 2 === 0) L'operatore % (modulo) restituisce il resto della divisione di num per 2.
-// Se num % 2 è uguale a 0, significa che num è pari (non lascia resto nella divisione per 2), 
-// quindi la condizione if è vera solo per i numeri pari.
+console.log(result3); /* qui chiedo di fare la somma di tutti i numeri pari con la condizione if
+(num % 2 === 0) L'operatore % (modulo) restituisce il resto della divisione di num per 2.
+Se num % 2 è uguale a 0, significa che num è pari (non lascia resto nella divisione per 2), 
+quindi la condizione if è vera solo per i numeri pari. */
 
 // Per farlo dispari verificheremo se num % 2 !== 0, ovvero se num non è divisibile per 2 senza resto.
 
@@ -202,3 +202,35 @@ function generalità(a, b) {
 const value1 = generalità('Luca', 54);
 const frase1 = 'Hello ' + value1.name + ' oggi compi ' + value1.age + ' anni';
 console.log(frase1);
+
+
+//Le closures
+
+function outerFunction(a) {
+    function innerFunction(b) {
+        return a + b
+    }
+    return innerFunction
+}
+const result4 = outerFunction(10)(30);
+console.log(result4);
+
+/* si poteva scrivere anche cosi:
+const newInner = outerFunction(10);
+ const result4 = newInner(30);
+ console.log(result4); */
+
+ const numarr5 = [1,3,4,5,6,7,8,9,10];
+ function outerFunction1(arr5) {
+    function innerFunction1(num) {
+        for(let i = 0; i < arr5.length; i++){
+            const element = arr5[i];
+            if(element > num) {
+                console.log(element);
+            }
+        }
+    }
+    return innerFunction1
+ }
+
+ outerFunction1(numarr5)(6);
