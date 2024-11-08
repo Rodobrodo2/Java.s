@@ -61,7 +61,11 @@ console.log(chiavi);
 const valori = Object.values(student); //Object.values metodo per " i valori.
 console.log(valori);
 const entrate = Object.entries(student); //Object.entries metodo per chiave:valore.
-console.log(entrate);
+entrate.forEach(function(coppia) {
+    const chiave = coppia[0];
+    const valore = coppia[1];
+    console.log(chiave + ": " + valore);
+});
 
 //forEach &map
 
