@@ -6,21 +6,35 @@ class Automobile {
         this.anno = anno;
         this.chilometraggio = chilometraggio;
     }
+    
     descrizione() {
         return `La nuova ${this.marca} ${this.modello} del ${this.anno} e l'auto piu performante.`
     }
+
     aggiungiChilometri(km) {
         if (km > 0) {
             this.chilometraggio += km;
         }
     }
+
     mostraChilometraggio() {
         return `Il chilometraggio attuale è di ${this.chilometraggio} km.`
+    }
+
+    #calcolaEtà() {
+        const annoCorrente = new Date().getFullYear(); // Ottieni l'anno corrente
+        return annoCorrente - this.anno;  // Calcola la differenza tra l'anno corrente e l'anno di fabbricazione
+    }
+
+    mostraEtà() {
+        const eta = this.#calcolaEtà();  // Richiama il metodo privato #calcolaEtà
+        return `L'età dell'automobile è di ${eta} anni.`;
     }
 }
 
 let newCar = new Automobile("Audi", "Rs6", 2024);
 console.log(newCar.descrizione()); //.descrizione per stampare anche la descrizione ,il nome puo essere descrizione oppure qualsiasi altra cosa.
+console.log(newCar.mostraEtà()); //Mostra l'eta dell'auto
 // aggiungi km e mostra il chilometraggio attuale:
 newCar.aggiungiChilometri(180);
 console.log(newCar.mostraChilometraggio());
