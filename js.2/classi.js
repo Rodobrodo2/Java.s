@@ -30,6 +30,13 @@ class Automobile {
         const eta = this.#calcolaEtà();  // Richiama il metodo privato #calcolaEtà
         return `L'età dell'automobile è di ${eta} anni.`;
     }
+
+    _controllaChilometri() {
+        const limiteChilometraggio = 100000; // verifica se il chilometraggio supera 100k
+        if (this.chilometraggio > limiteChilometraggio) {
+            console.warn(`Avviso: il chilometraggio ha superato il limite di ${limiteChilometraggio} km!`);
+        }
+    } 
 }
 
 let newCar = new Automobile("Audi", "Rs6", 2024);
@@ -57,12 +64,18 @@ class Elettrica extends Automobile {
     mostraAutonomia() {
         return `L'autonomia attuale è di ${this.autonomia} km`;
     }
+
+    aggiungiChilometri(km) {
+        super.aggiungiChilometri(km); // Chiama il metodo della classe base
+        this._controllaChilometri(); // Richiama il metodo protetto
+    }
 }
 
-let autoElettrica = new Elettrica("Toyota", "Yaris", 2023, 0, 500);
+let autoElettrica = new Elettrica("Toyota", "Yaris", 2023, 95000, 500);
 console.log(autoElettrica.descrizione());
 autoElettrica.ricarica();
 console.log(autoElettrica.mostraAutonomia());
+autoElettrica.aggiungiChilometri(10000);
 
 //Prototype
 Automobile.prototype.saluta = function() {
