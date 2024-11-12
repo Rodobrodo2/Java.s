@@ -4,16 +4,24 @@ class Automobile {
         this.modello = modello;
         this.anno = anno;
         this.chilometraggio = chilometraggio;
+        this.#contatoreChiamate = 0; 
     }
+
+    #contatoreChiamate;
 
     descrizione() {
         return `${this.marca} ${this.modello} è del ${this.anno} e ha un chilometraggio di ${this.chilometraggio} km`
     }
     
     aggiungiChilometri(km) {
+        this.#contatoreChiamate++;
         if (km > 0) {
             this.chilometraggio += km;
         }
+    }
+
+    mostraContatoreChiamate () {
+        return `Il metodo aggiungiChilometri è stato chiamato ${this.#contatoreChiamate} volte.`
     }
 
     mostraChilometraggio() {
@@ -37,3 +45,14 @@ let auto2 = new Automobile("Audi", "A4", 2022, 75000);
 console.log(auto1.descrizione());
 console.log(auto2.descrizione());
 console.log(Automobile.confrontaChilometraggio(auto1, auto2));
+
+
+// Chiamate al metodo
+let myCar = new Automobile("Porsche", "Cayenne", 2008);
+myCar.aggiungiChilometri(100);
+myCar.aggiungiChilometri(200);
+myCar.aggiungiChilometri(50);
+
+console.log(myCar.mostraContatoreChiamate());
+console.log(myCar.descrizione());
+console.log(myCar.mostraChilometraggio());  
