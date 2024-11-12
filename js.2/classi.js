@@ -76,6 +76,7 @@ console.log(autoElettrica.descrizione());
 autoElettrica.ricarica();
 console.log(autoElettrica.mostraAutonomia());
 autoElettrica.aggiungiChilometri(10000);
+console.log(autoElettrica.mostraAutonomia());
 
 //Prototype
 Automobile.prototype.saluta = function() {
