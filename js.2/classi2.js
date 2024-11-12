@@ -9,12 +9,16 @@ class Automobile {
 
     #contatoreChiamate;
 
+    #incrementaContatore() {
+        this.#contatoreChiamate++;
+    }
+
     descrizione() {
         return `${this.marca} ${this.modello} è del ${this.anno} e ha un chilometraggio di ${this.chilometraggio} km`
     }
     
     aggiungiChilometri(km) {
-        this.#contatoreChiamate++;
+        this.#incrementaContatore(); //metodi privati  //#contatoreChiamate++;(proprieta privata)
         if (km > 0) {
             this.chilometraggio += km;
         }
@@ -46,8 +50,8 @@ console.log(auto1.descrizione());
 console.log(auto2.descrizione());
 console.log(Automobile.confrontaChilometraggio(auto1, auto2));
 
+//proprieta e metodo privato
 
-// Chiamate al metodo
 let myCar = new Automobile("Porsche", "Cayenne", 2008);
 myCar.aggiungiChilometri(100);
 myCar.aggiungiChilometri(200);
