@@ -50,8 +50,8 @@ console.log(auto1.descrizione());
 console.log(auto2.descrizione());
 console.log(Automobile.confrontaChilometraggio(auto1, auto2));
 
-//proprieta e metodo privato
 
+// Chiamate a proprieta private poi metodi privati
 let myCar = new Automobile("Porsche", "Cayenne", 2008);
 myCar.aggiungiChilometri(100);
 myCar.aggiungiChilometri(200);
