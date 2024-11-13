@@ -84,7 +84,7 @@ console.log(camion.mostraCaricoAttuale());
 console.log(auto instanceof Automobile);
 console.log(camion instanceof Camion); 
 console.log(camion instanceof Automobile); 
-
+//utilizzo del metodo statico
 console.log(Automobile.verificaIstanza(auto, Automobile));
 console.log(Automobile.verificaIstanza(camion, Camion));   
 console.log(Automobile.verificaIstanza(camion, Automobile)); 
