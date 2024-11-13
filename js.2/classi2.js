@@ -41,6 +41,10 @@ class Automobile {
             return `Le due auto hanno lo stesso chilometraggio.`;
         }
     }
+
+    get chilometraggioAttuale2() {
+        return this.chilometraggio;
+    }
 }
 
 let auto1 = new Automobile("Toyota", "Yaris", 2023, 50000);
@@ -59,4 +63,8 @@ myCar.aggiungiChilometri(50);
 
 console.log(myCar.mostraContatoreChiamate());
 console.log(myCar.descrizione());
-console.log(myCar.mostraChilometraggio());  
+console.log(myCar.mostraChilometraggio()); 
+
+// Getter
+let yourCar = new Automobile("Fiat", "Abart", 2016, 200);
+console.log(`Il chilometraggio attuale 2.0 è ${yourCar.chilometraggioAttuale2}`);
