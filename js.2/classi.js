@@ -80,10 +80,10 @@ console.log(autoElettrica.mostraAutonomia());
 
 //Prototype
 Automobile.prototype.saluta = function() {
-    return `Ciao! Questa è una ${this.marca} ${this.modello}.`;
+    return `Ciao! Questa è una ${this.marca} ${this.modello} del ${this.anno} con ${this.chilometraggio} km.`;
 }
 
-let oldCar = new Automobile("Fiat", "Punto", 2008);
+let oldCar = new Automobile("Fiat", "Punto", 2008, 78000);
 console.log(oldCar.saluta());
 let futureCar = new Elettrica("Tesla", "Cybertruck");
 console.log(futureCar.saluta());
