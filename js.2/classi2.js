@@ -45,6 +45,7 @@ class Automobile {
     get chilometraggioAttuale2() {
         return this.chilometraggio;
     }
+
 }
 
 let auto1 = new Automobile("Toyota", "Yaris", 2023, 50000);
