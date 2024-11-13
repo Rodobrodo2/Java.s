@@ -25,6 +25,14 @@ class Automobile {
     descrizione() {
         return `La nuova ${this.marca} ${this.modello} del ${this.anno} è l'auto più performante.`;
     }
+
+    static verificaIstanza(obj, classe) {
+        if (obj instanceof classe) {
+            return `L'oggetto è un'istanza della classe ${classe.name}.`;
+        } else {
+            return `L'oggetto non è un'istanza della classe ${classe.name}.`;
+        }
+    }
 }
 
 let auto = new Automobile("Audi", "A4", 2021, 5000);
@@ -71,3 +79,13 @@ console.log(camion.mostraCaricoAttuale());
 
 camion.carica(18000);
 console.log(camion.mostraCaricoAttuale()); 
+
+//Istanceof
+console.log(auto instanceof Automobile);
+console.log(camion instanceof Camion); 
+console.log(camion instanceof Automobile); 
+
+console.log(Automobile.verificaIstanza(auto, Automobile));
+console.log(Automobile.verificaIstanza(camion, Camion));   
+console.log(Automobile.verificaIstanza(camion, Automobile)); 
+console.log(Automobile.verificaIstanza(auto, Camion));  
