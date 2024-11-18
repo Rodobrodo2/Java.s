@@ -26,7 +26,19 @@ console.log(`Nome: ${name}`)
 console.log(`Zipcode: ${zipCode}`)
 
 //Destructuring con nomi di variabili diversi predefiniti(obj)
+let { 
+    name: nomePersona,
+    eta: etaPersona = 29,
+    city: cittàResidenza = "Roma", 
+    lavoro: lavoroAttività = "Sviluppatore",
+} = utente;
+
+console.log(`Nome: ${nomePersona}`);
+console.log(`Età: ${etaPersona}`);
+console.log(`Città: ${cittàResidenza}`);
+console.log(`Lavoro: ${lavoroAttività}`);
+
+//Destructuring con valori predefiniti (obj)
 console.log("Citta: " + city);
 console.log("Università: " + university);
-
 
