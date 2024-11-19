@@ -160,3 +160,25 @@ const descrizionePersona = `
 `;
 
 console.log(descrizionePersona);
+
+// Funzione e template literals
+function ragazzo(persona) {
+    const { nome, cognome, eta, citta } = persona;
+    return `
+        Informazioni sul ragazzo:
+        Nome: ${nome}
+        Cognome: ${cognome}
+        Età: ${eta}
+        Citta: ${citta}
+    `;
+}
+
+const ragazzoEsempio = {
+    nome: "Giuseppe",
+    cognome: "Rossi",
+    eta: 28,
+    citta: "Lucca",
+}
+
+const ragazzoFormattato = ragazzo(ragazzoEsempio);
+console.log(ragazzoFormattato);
