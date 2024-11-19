@@ -136,3 +136,27 @@ const person = {
 
 const { naMe, surname } = person;
 console.log(`Il mio nome è ${naMe} ${surname}`);
+
+// Stringa multilineaa con templates literals (capito male)
+const ragazza = `
+    nome : Claudia,
+    cognome: Rossi,
+    eta: 33,
+`
+console.log(ragazza)
+
+//oppure(forse ho cpaito, da chiedere a manfro!)
+const nAme = "Luca";
+const sUrname = "Rossi";
+const aGe = 28;
+const cIty = "Milano";
+
+const descrizionePersona = `
+    Informazioni sulla persona:
+    Nome: ${nAme}
+    Cognome: ${sUrname}
+    Età: ${aGe} anni
+    Città: ${cIty}
+`;
+
+console.log(descrizionePersona);
