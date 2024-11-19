@@ -106,3 +106,24 @@ console.log(jsonString);
 const stringaJson = '{"nome":"Redi","eta": 25}';
 const object = JSON.parse(stringaJson);
 console.log(object);
+
+//Manipolazione di dati JSON
+
+//1 crea una stringa JSON che rappresenta una lista di persone
+let jsonUtenti = `[
+    {"nome": "Luca", "età": 30},
+    {"nome": "Anna", "età": 25},
+    {"nome": "Marco", "età": 35}
+]` ;
+
+//2 convertire la stringa JSON in un array di oggetti
+let utenti = JSON.parse(jsonUtenti);
+
+//3 aggiungere una nuoa persona all'array
+utenti.push({ nome: "Giulia", età: 28 });
+
+//4 convertire l'array aggiornato in una stringa JSON 
+let jsonAggiornato = JSON.stringify(utenti, null, 4);
+
+//stampa la stringa JSON
+console.log(jsonAggiornato);
