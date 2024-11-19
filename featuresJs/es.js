@@ -42,3 +42,34 @@ console.log(`Lavoro: ${lavoroAttività}`);
 console.log("Citta: " + city);
 console.log("Università: " + university);
 
+//Copia di un Array
+let numeriOriginale = [1, 2, 3, 4, 5];
+let numeriCopia = [...numeriOriginale];
+numeriOriginale.push(6);
+
+console.log("Array originale:", numeriOriginale);
+console.log("Array copia:", numeriCopia);
+
+//Unione di 2 array
+const proteine = ["pollo", "tonno", "seitan"];
+const carboidrati = ["pasta", "riso", "farro"];
+const dieta = [ ...proteine, ...carboidrati];
+console.log("La tua nuova dieta comprende: " + dieta);
+
+//Copia di un oggetto con proprietà aggiuntive
+let macchina = {
+    marca: "mercedes",
+    modello: "amg",
+    portiere: 5,
+    cambio: "manuale"
+}
+
+let copiaMacchina = { ...macchina, ruote: 4};
+console.log(macchina);
+console.log(copiaMacchina);
+
+//Funzione con parametri variabili
+function somma(...numeri) {
+    return numeri.reduce((accumulatore, numero) => accumulatore + numero, 0);
+}
+console.log(somma(4, -2, 7, 9, 10));
