@@ -92,3 +92,17 @@ const scuola = {
 const { materia, ...resto} = scuola;
 console.log(`Ho il massimo dei voti in ${materia}`);
 console.log("Info da sapere sulla mia scuola:", resto);
+
+//Conversione di un oggetto in una stringa JSON
+let oggetto = {
+    nome: "Redi",
+    eta: 25
+}
+
+let jsonString = JSON.stringify(oggetto);
+console.log(jsonString);
+
+//Conversione di una stringa JSON in un oggetto
+const stringaJson = '{"nome":"Redi","eta": 25}';
+const object = JSON.parse(stringaJson);
+console.log(object);
