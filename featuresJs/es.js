@@ -42,7 +42,7 @@ console.log(`Lavoro: ${lavoroAttività}`);
 console.log("Citta: " + city);
 console.log("Università: " + university);
 
-//Copia di un Array
+//Coppia di un Array
 let numeriOriginale = [1, 2, 3, 4, 5];
 let numeriCopia = [...numeriOriginale];
 numeriOriginale.push(6);
