@@ -127,3 +127,12 @@ let jsonAggiornato = JSON.stringify(utenti, null, 4);
 
 //stampa la stringa JSON
 console.log(jsonAggiornato);
+
+//Stringa semplice con template literals
+const person = {
+    naMe: "Gilberto",
+    surname: "Nanni",
+}
+
+const { naMe, surname } = person;
+console.log(`Il mio nome è ${naMe} ${surname}`);
