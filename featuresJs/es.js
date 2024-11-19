@@ -73,3 +73,22 @@ function somma(...numeri) {
     return numeri.reduce((accumulatore, numero) => accumulatore + numero, 0);
 }
 console.log(somma(4, -2, 7, 9, 10));
+
+//Destructuring array con rest operator
+let bibite = ["fanta", "coca cola", "sprite", "monster", "redbull"];
+let [orange, black, ...rest] = bibite;
+console.log(`Bevo spesso la ${orange}`);
+console.log(`Non bevo quasi mai la ${black}`);
+console.log(`Queste bibite:  ${rest} non le ho mai provate`);
+
+//Destructuring oggetto con rest operator
+const scuola = {
+    materia: "Scienze",
+    classe: "terza F",
+    profResponsabile: "Luca Antonini",
+    rimandato: "Spagnolo" 
+}
+
+const { materia, ...resto} = scuola;
+console.log(`Ho il massimo dei voti in ${materia}`);
+console.log("Info da sapere sulla mia scuola:", resto);
