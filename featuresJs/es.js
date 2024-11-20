@@ -256,7 +256,14 @@ function stampaAvviso() {
     console.warn('VIRUS NEL SISTEMA');
 }
 
-setInterval(stampaAvviso, 2000);
+const avviso = setInterval(stampaAvviso, 2000);
+
+setTimeout(() => {
+    clearInterval(avviso);
+    console.log('Intervallo interrotto dopo 4 secondi');
+}, 4000);
+
+
 
 //Interrompere setInterval con clearInterval
 function stampaErrore() {
@@ -269,3 +276,66 @@ setTimeout(() => {
     clearInterval(intervalId);
     console.log('Intervallo interrotto dopo 5 secondi');
 }, 5000);
+
+// Gestione di un errore semplice
+function dividi(numeratore, denominatore) {
+    try {
+        if (denominatore === 0) {
+            throw new Error("Impossibile dividere per zero."); //messaggio personalizzato
+        }
+        let risultato = numeratore / denominatore;
+        console.log(`Il risultato della divisione è: ${risultato}`);
+    } catch (errore) {
+        console.error("Errore:", errore.message); //errore.message(proprieta) lancio il messaggio personalizzato
+    }
+}
+dividi(10, 2);
+dividi(10, 0);
+
+//Gestione di piu tipi di errori
+function operaSuStringa(input) {
+    try {
+
+        if (input === null || input === undefined) {
+            throw new Error("L'input non può essere null o undefined.");
+        }
+
+        if (typeof input !== "string") {
+            throw new TypeError("L'input deve essere una stringa.");
+        }
+    
+        let risultato = input.toUpperCase();
+        console.log(`Risultato: ${risultato}`);
+
+    } catch (errore) {
+        if (errore instanceof TypeError) {
+            console.error("Errore di tipo:", errore.message);
+        } else {
+            console.error("Errore generico:", errore.message || "Si è verificato un errore sconosciuto.");
+        }
+    }
+}
+
+operaSuStringa("ciao mondo");
+operaSuStringa(42);
+operaSuStringa(null);
+
+// Uso di finally per eseguire codice indipendentemente dal risultato
+function operazioneConErrore() {
+    try {
+        let numero = 10;
+        let risultato = numero / 0;  
+        if (risultato === Infinity) {
+            throw new Error("Non si può dividere per zero!");
+        }
+        console.log("Operazione riuscita, risultato:", risultato);
+        
+    } catch (errore) {
+        console.error("Si è verificato un errore:", errore.message);
+        
+    } finally {
+        console.log("Operazione completata.");
+    }
+}
+
+operazioneConErrore();
