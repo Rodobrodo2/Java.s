@@ -216,3 +216,30 @@ if (sTato === "avviso") {
 } else {
     console.log("Stato normale: tutto funziona correttamente.");
 }
+
+// Utilizzare console.table() e console.group()
+const studenti = [
+    { nome: 'Mario', cognome: 'Rossi', età: 20 },
+    { nome: 'Luigi', cognome: 'Verdi', età: 22 },
+    { nome: 'Giulia', cognome: 'Bianchi', età: 19 },
+];
+
+function stampaDati() {
+    console.group('Dettagli Studenti'); 
+    
+    console.log('Stampa dettagli studenti in formato tabella:');
+    console.table(studenti); 
+    
+    console.log('Messaggi individuali:');
+    studenti.forEach(studente => {
+        console.groupCollapsed(`Studente: ${studente.nome} ${studente.cognome}`);
+        console.log(`Nome: ${studente.nome}`);
+        console.log(`Cognome: ${studente.cognome}`);
+        console.log(`Età: ${studente.età}`);
+        console.groupEnd(); 
+    });
+
+    console.groupEnd(); 
+}
+
+stampaDati();
