@@ -243,3 +243,29 @@ function stampaDati() {
 }
 
 stampaDati();
+
+//Utilizzare seTimeout
+function stampaMessaggio() {
+    console.log('Questo messaggio appare dopo 3 secondi');
+}
+
+setTimeout(stampaMessaggio, 3000);
+
+//Utilizzare setInterval
+function stampaAvviso() {
+    console.warn('VIRUS NEL SISTEMA');
+}
+
+setInterval(stampaAvviso, 2000);
+
+//Interrompere setInterval con clearInterval
+function stampaErrore() {
+    console.error('Password non valida');
+}
+
+const intervalId = setInterval(stampaErrore, 1000);
+
+setTimeout(() => {
+    clearInterval(intervalId);
+    console.log('Intervallo interrotto dopo 5 secondi');
+}, 5000);
