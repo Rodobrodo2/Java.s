@@ -182,3 +182,37 @@ const ragazzoEsempio = {
 
 const ragazzoFormattato = ragazzo(ragazzoEsempio);
 console.log(ragazzoFormattato);
+
+//Utilizzare console.log()
+let numero = 42;
+let stringa = "Ciao, mondo!"; 
+let array = [1, 2, 3, 4, 5]; 
+let oGgetto = { nome: "Mario", età: 30 }; 
+
+console.log("Numero:", numero);
+console.log("Stringa:", stringa);
+console.log("Array:", array);
+console.log("Oggetto:", oGgetto);
+
+//Utilizzare console.error() e console.warn()
+//console.error
+let stato = "errore";
+
+if (stato === "errore") {
+    console.error("Errore critico: qualcosa è andato storto!");
+} else if (stato === "avviso") {
+    console.warn("Avviso: controlla i dati inseriti.");
+} else {
+    console.log("Stato normale: tutto funziona correttamente.");
+}
+
+//console.warn
+let sTato = "avviso";
+
+if (sTato === "avviso") {
+    console.warn("Avviso: controlla i dati inseriti.");
+} else if (sTato === "error") {
+    console.warn("Errore critico: qualcosa è andato storto!");
+} else {
+    console.log("Stato normale: tutto funziona correttamente.");
+}
