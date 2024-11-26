@@ -73,7 +73,7 @@ function getRandomPromise() {
     });
 }
 
-// Include anche l'es: Gestione degli errori con catch
+// Include anche l'es: Gestione degli errori con catch e gestione degli errori in una catena di promesse
 getRandomPromise()
     .then((succesNumber) => {
         console.log(`Promessa risolta con il numero: ${successNumber}`);
@@ -85,3 +85,24 @@ getRandomPromise()
     .catch((errorNumber) => {
         console.error(`Promessa rifiutata con il numero ${errorNumber}`);
     });
+
+// Gestione degli errori con then e catch
+function myPromise() {
+    return new Promise((resolve, reject) => {
+        const value = true;
+        if(value) {
+            resolve("La promessa e vera");
+        } else {
+            reject("La promessa e falsa");
+        }
+    })
+}
+
+myPromise()
+    .then((success) => {
+        console.log(success);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+
