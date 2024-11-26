@@ -22,25 +22,39 @@ newPromise()
         console.log('Operazione completata')
     })
 
-    // Catena di promesse semplici
-    function getNumberAfterOneSecond() {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                const num = 4;
-                resolve(num);
-            }, 1000);
-        })
-    }
+// Catena di promesse semplici
+function getNumberAfterOneSecond() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const num = 4;
+            resolve(num);
+        }, 1000);
+    })
+}
 
-    getNumberAfterOneSecond()
-        .then((number) => {
-            console.log(`Numero iniziale: ${number}`);
-            return number * 2; // funz callback il numero inizale * 2
-        })
-        .then((doubleNumber) => {
-            console.log(`Dopo la moltiplicazione per 2: ${doubleNumber}`);
-            return doubleNumber + 3; //Aggiungiamo 3 al doubleNumber
-        })
-        .then((addNumber) => {
-            console.log(`Risultato finale: ${addNumber}`);
-        });
+getNumberAfterOneSecond()
+    .then((number) => {
+        console.log(`Numero iniziale: ${number}`);
+        return number * 2; // funz callback il numero inizale * 2
+    })
+    .then((doubleNumber) => {
+        console.log(`Dopo la moltiplicazione per 2: ${doubleNumber}`);
+        return doubleNumber + 3; //Aggiungiamo 3 al doubleNumber
+    })
+    .then((addNumber) => {
+        console.log(`Risultato finale: ${addNumber}`);
+    });
+
+// Catena di promesse con condizioni
+getNumberAfterOneSecond()
+    .then((number) => {
+        console.log(`Partiamo con ${number}`);
+        if(number % 2 === 0) {
+            return number + 200; 
+        } else {
+            return number * 200; 
+        }
+    })
+    .then((newNumber) => {
+        console.log(`Il nuovo numero è ${newNumber}`);
+    });
