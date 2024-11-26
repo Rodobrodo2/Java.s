@@ -49,12 +49,38 @@ getNumberAfterOneSecond()
 getNumberAfterOneSecond()
     .then((number) => {
         console.log(`Partiamo con ${number}`);
-        if(number % 2 === 0) {
-            return number + 200; 
+        if (number % 2 === 0) {
+            return number + 200;
         } else {
-            return number * 200; 
+            return number * 200;
         }
     })
     .then((newNumber) => {
         console.log(`Il nuovo numero è ${newNumber}`);
+    });
+
+//Catena di promesse con gestione degli errori
+function getRandomPromise() {
+    return new Promise((resolve, reject) => {
+        const randomValue = 4;
+        setTimeout(() => {
+            if(randomValue >= 5) {
+                resolve(randomValue);
+            } else {
+                reject(randomValue);
+            }
+        }, 1000);
+    });
+}
+
+getRandomPromise()
+    .then((succesNumber) => {
+        console.log(`Promessa risolta con il numero: ${successNumber}`);
+        return succesNumber * 2;
+    })
+    .then((modifiedNumber) => {
+        console.log(`Numero dopo la manipolazione: ${modifiedNumber}`);
+    })
+    .catch((errorNumber) => {
+        console.error(`Promessa rifiutata con il numero ${errorNumber}`);
     });
