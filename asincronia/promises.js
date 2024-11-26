@@ -106,3 +106,28 @@ myPromise()
         console.error(error);
     });
 
+// Utilizzare Promise.all
+function sourceA() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Dati dalla fonte A");
+        }, 2000);
+    });
+}
+
+function sourceB() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Dati dalla fonte B");
+        }, 3000);
+    });
+}
+
+Promise.all([sourceA(), sourceB()])
+    .then((results) => {
+        console.log(results);
+    })
+    .catch((error) => {
+        console.error("Si e verificato un errore", error);
+    });
+
