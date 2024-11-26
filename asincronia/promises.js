@@ -73,6 +73,7 @@ function getRandomPromise() {
     });
 }
 
+// Include anche l'es: Gestione degli errori con catch
 getRandomPromise()
     .then((succesNumber) => {
         console.log(`Promessa risolta con il numero: ${successNumber}`);
