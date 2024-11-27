@@ -15,7 +15,9 @@ async function callFunctions() {
     console.log(firstResult);
 
     const secondResult = await secondFuntion();
-    console.loh(secondResult);
+    console.log(secondResult);
+    
+    console.log("Totale attesa: 5 secondi");
 }
 
 callFunctions();
