@@ -156,4 +156,32 @@ Promise.race([firstTry(), secondTry()])
         console.error(second);
     });
 
+// Utilizzare Promise.allSettled
+function myData() {
+    return new Promise((resolve, reject) => {
+        resolve("Questi dati fanno parte del mio data abse")
+    });
+}
 
+function yourData() {
+    return new Promise((resolve, reject) => {
+        resolve("Questi dati fanno parte del tuo data base");
+    });
+}
+
+function randomData() {
+    return new Promise((resolve, reject) => {
+        reject("Questi dati non fanno parte dei nostri data base");
+    });
+}
+
+Promise.allSettled([myData(), yourData(), randomData()])
+    .then((result) => {
+        console.log(result);
+    })
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error)=> {
+        console.warn(error);
+    });
