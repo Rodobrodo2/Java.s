@@ -131,3 +131,29 @@ Promise.all([sourceA(), sourceB()])
         console.error("Si e verificato un errore", error);
     });
 
+// Utilizzare Promise.race
+function firstTry() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Operazione risolta al primo tentativo")
+        }, 5000);
+    });
+}
+
+function secondTry() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject("Attenzione, operazione risolta al secondo tentativo!");
+        }, 2000);
+    });
+}
+
+Promise.race([firstTry(), secondTry()])
+    .then((first) => {
+        console.log(first);
+    })
+    .catch((second) => {
+        console.error(second);
+    });
+
+
