@@ -202,3 +202,26 @@ async function waitMessage() {
 }
 
 waitMessage();
+
+//Gestione degli errori con try e catch
+async function handlePromise(shouldResolve) {
+    console.log("Inizio della gestione della promessa...");
+
+    try {
+        const result = await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (shouldResolve) {
+                    resolve("Promessa risolta con successo!");
+                } else {
+                    reject("Promessa rifiutata a causa di un errore");
+                }
+            }, 2000);
+        });
+
+        console.log(result);
+    } catch(error) {
+        console.error("Errore catturato:", error);
+    }
+}
+
+handlePromise(false);
