@@ -185,3 +185,20 @@ Promise.allSettled([myData(), yourData(), randomData()])
     .catch((error)=> {
         console.warn(error);
     });
+
+// asyn e await
+function newMessagge() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Messaggio inoltrato dopo 2 secondi");
+        }, 2000);
+    });
+}
+
+async function waitMessage() {
+    console.log("Aspettando che il messaggio venga inoltrato...");
+    const message = await newMessagge();
+    console.log(message);
+}
+
+waitMessage();
