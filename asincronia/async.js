@@ -58,4 +58,4 @@ const sendData = async () => {
     }
 }
 
-sendData();
+sendData(); // Include es Gestione degli errori con async e await
