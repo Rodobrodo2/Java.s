@@ -159,7 +159,7 @@ Promise.race([firstTry(), secondTry()])
 // Utilizzare Promise.allSettled
 function myData() {
     return new Promise((resolve, reject) => {
-        resolve("Questi dati fanno parte del mio data abse")
+        resolve("Questi dati fanno parte del mio data base")
     });
 }
 
@@ -175,16 +175,11 @@ function randomData() {
     });
 }
 
-Promise.allSettled([myData(), yourData(), randomData()])
-    .then((result) => {
-        console.log(result);
-    })
-    .then((result) => {
-        console.log(result);
-    })
-    .catch((error)=> {
-        console.warn(error);
-    });
+const allData = [myData(), yourData(), randomData()];
+
+Promise.allSettled(allData).then((results) =>
+results.forEach((results) => console.log(results.status)),
+);
 
 // asyn e await
 function newMessagge() {
